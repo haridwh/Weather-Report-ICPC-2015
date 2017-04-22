@@ -3,8 +3,15 @@ from collections import defaultdict
 # berapa kali percobaan
 n = int(input("Jumlah Observasi : "))
 # probabilitas tiap cuaca [sunny, cloudy, rainny, foggy]
-prob = [0.1, 0.2, 0.3, 0.4]
-# prob = [0.9, 0.049999, 0.05, 0.000001]
+isNotOne = True
+while isNotOne:
+	print "Masukan probabilitas masing-masing cuaca dipisahkan menggunakan spasi (S C R F) : "
+	strProb = raw_input().split(' ')
+	prob = [float(num) for num in strProb]
+	if sum(prob) !=1:
+		print "Jumlah probabilitas harus sama dengan satu"
+	else:
+		isNotOne = False
 # nProb = {'ss':0.81,'sc':0.0449991,'sr':0.045,'sf':0.0000009,'cs':0.0449991,'cc':0.0024999,'cr':0.00249995,'cf':0.0000005,'rs':0.045,'rc':0.00249995,'rr':0.0025,'rf':0.00000005,'fs':0.0000009,'fc':0.00000005,'fr':0.00000005,'ff':0.000000000001}
 
 def getKey(nSize):
